@@ -39,7 +39,7 @@
         },
         {
             "__type": "GMRTileLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "SolidColisionLayer",
+            "name": "CollisionLayer",
             "id": "f658560f-517b-4250-812a-6899feb0c75e",
             "depth": 100,
             "grid_x": 32,
@@ -224,13 +224,13 @@
         "Height": 512,
         "inheritRoomSettings": false,
         "modelName": "GMRoomSettings",
-        "persistent": false,
+        "persistent": true,
         "mvc": "1.0",
         "Width": 1024
     },
     "mvc": "1.0",
     "views": [
-{"id": "2ff67365-a1aa-48c0-a569-a410104268ad","hborder": 32,"hport": 384,"hspeed": -1,"hview": 192,"inherit": false,"modelName": "GMRView","objId": "43aa7c24-337d-4338-9123-7c4657fc2c70","mvc": "1.0","vborder": 32,"visible": true,"vspeed": -1,"wport": 512,"wview": 256,"xport": 0,"xview": 0,"yport": 0,"yview": 0},
+{"id": "2ff67365-a1aa-48c0-a569-a410104268ad","hborder": 32,"hport": 768,"hspeed": -1,"hview": 192,"inherit": false,"modelName": "GMRView","objId": "43aa7c24-337d-4338-9123-7c4657fc2c70","mvc": "1.0","vborder": 32,"visible": true,"vspeed": -1,"wport": 1024,"wview": 256,"xport": 0,"xview": 0,"yport": 0,"yview": 0},
 {"id": "e7eaf2e7-df2b-4e30-895a-50c6c434d3dc","hborder": 32,"hport": 768,"hspeed": -1,"hview": 768,"inherit": false,"modelName": "GMRView","objId": "00000000-0000-0000-0000-000000000000","mvc": "1.0","vborder": 32,"visible": false,"vspeed": -1,"wport": 1024,"wview": 1024,"xport": 0,"xview": 0,"yport": 0,"yview": 0},
 {"id": "ace4cba9-4677-45a2-98d0-1eacbea60e9b","hborder": 32,"hport": 768,"hspeed": -1,"hview": 768,"inherit": false,"modelName": "GMRView","objId": "00000000-0000-0000-0000-000000000000","mvc": "1.0","vborder": 32,"visible": false,"vspeed": -1,"wport": 1024,"wview": 1024,"xport": 0,"xview": 0,"yport": 0,"yview": 0},
 {"id": "971fde6c-7f23-4965-b8ef-ad45d13dceb0","hborder": 32,"hport": 768,"hspeed": -1,"hview": 768,"inherit": false,"modelName": "GMRView","objId": "00000000-0000-0000-0000-000000000000","mvc": "1.0","vborder": 32,"visible": false,"vspeed": -1,"wport": 1024,"wview": 1024,"xport": 0,"xview": 0,"yport": 0,"yview": 0},

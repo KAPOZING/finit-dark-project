@@ -10,7 +10,8 @@
         "074c4308-b6b9-49cf-b30a-22ef7a359a3c",
         "4384e520-8971-4c48-8c64-8e7697963d52",
         "3c61f304-9f7d-483d-a2a4-e817101dcab1",
-        "d4ad7ad0-ff81-466c-9fa5-88b3b93080a2"
+        "d4ad7ad0-ff81-466c-9fa5-88b3b93080a2",
+        "d0dbbc11-1f79-42d4-9240-aea41a58c7ee"
     ],
     "filterType": "GMSprite",
     "folderName": "Pirdy",
