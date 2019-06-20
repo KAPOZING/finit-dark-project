@@ -1,43 +1,48 @@
+var bbox_side;
+
+layerID = layer_get_id("CollisionLayer");
+tilemap = layer_tilemap_get_id(layerID);
+
+if xSpeed > 0
+{
+	bbox_side = bbox_right;
+}
+else if xSpeed < 0
+{
+	bbox_side = bbox_left;
+}
+
+if tilemap_get_at_pixel(tilemap, bbox_left, y) || tilemap_get_at_pixel(tilemap, bbox_right, y)
+{
+	if xSpeed > 0
+	{
+		xPos = xPos - (xPos % 32) + 31 - (bbox_right - xPos);
+	}
+	else if xSpeed < 0
+	{
+		xPos = xPos - (xPos % 32) - (bbox_left - xPos);
+	}
+	
+	xSpeed = 0;
+}
 
 
-//Hrizontal Ground Movement
+//Movement
 if onGround
 {
-	if keyRight
+	//Horizontal move
+	if keyRight || keyLeft
 	{
-		xSpeed = approach(xSpeed, hMaxSpeed, hAccel);
-	}
-	else if keyLeft
-	{
-		xSpeed = approach(xSpeed, -hMaxSpeed, hAccel);
+		xSpeed = approach(xSpeed, hMaxSpeed * facing, hAccel);
 	}
 	else
 	{
 		xSpeed = approach(xSpeed, 0, hDecel);
 	}
-}
-else if !onGround
-{
-	if keyRight
-	{
-		xSpeed = approach(xSpeed, airMaxSpeed, airAccel);
-	}
-	else if keyLeft
-	{
-		xSpeed = approach(xSpeed, -airMaxSpeed, airAccel);
-	}
-	else
-	{
-		xSpeed = approach(xSpeed, 0, airDecel);
-	}
-}
 
-
-
-//Jump
-
-if onGround
-{
+	
+	
+	//Jump
 	airJump = true;
 	
 	if keyA
@@ -47,10 +52,21 @@ if onGround
 		onGround = false;
 	}
 }
-
-if not onGround
+else if not onGround
 {
+	//Horizontal air move
+	if keyRight || keyLeft
+	{
+		xSpeed = approach(xSpeed, airMaxSpeed * facing, airAccel);
+	}
+	else
+	{
+		xSpeed = approach(xSpeed, 0, airDecel);
+	}
+		
+	//Jumping
 	ySpeed += gForce;
+
 	
 	//Jump lower when don't hold jump
 	if ySpeed < 0 and !keyA
@@ -65,6 +81,4 @@ if not onGround
 		
 		airJump = false;
 	}
-	
-	
 }

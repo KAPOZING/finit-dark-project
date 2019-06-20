@@ -3,7 +3,6 @@
 button_input();
 
 //Movement
-tilemap_collision();
 
 
 

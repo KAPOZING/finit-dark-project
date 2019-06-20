@@ -25,8 +25,6 @@ keyB = false; //For attacks
 
 
 //Movement
-collision_init();
-
 xSpeed = 0; //Current Hrizontal speed
 ySpeed = 0; //Current Vertical speed
 
