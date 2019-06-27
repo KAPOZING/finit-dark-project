@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scene/CharacterScene/Player.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Sprites/Characters/Pirdy/MoveHorizontal_1.png" type="Texture" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Graphics/Sprites/Characters/Pirdy/IdleHorizontal_3.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/Sprites/Characters/Pirdy/IdleHorizontal_4.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Sprites/Characters/Pirdy/IdleHorizontal_1.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Sprites/Characters/Pirdy/Turn_1.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Sprites/Characters/Pirdy/Turn_2.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Sprites/Characters/Pirdy/Turn_3.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Sprites/Characters/Pirdy/Turn_4.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -21,6 +25,11 @@ animations = [ {
 "loop": true,
 "name": "IdleHorizontal",
 "speed": 4.5
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Turn",
+"speed": 40.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -32,8 +41,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.094471, 0 )
 frames = SubResource( 1 )
-animation = "IdleHorizontal"
-frame = 1
+animation = "Turn"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

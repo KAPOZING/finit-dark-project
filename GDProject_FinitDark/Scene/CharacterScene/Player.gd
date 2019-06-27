@@ -3,7 +3,7 @@ extends KinematicBody2D
 const hAccel = 6
 const hDecel = 10
 const hMAX_SPEED = 60
-const GRAVITY = 9
+const GRAVITY = 7
 const JUMP_POWER = -200
 const FLOOR = Vector2(0, -1)
 
@@ -18,8 +18,7 @@ func _physics_process(delta):
 	
 	character_movement()
 	
-
-	
+	character_animation()
 	
 
 
@@ -66,9 +65,18 @@ func character_movement():
 
 func character_animation():
 	
+	if facing < 0 && velocity.x > 0:
+		$AnimatedSprite.play("Turn")
+	elif facing > 0 && velocity.x < 0:
+		$AnimatedSprite.play("Turn")
+	
+	if onGround == true && facing < 0:
+		$AnimatedSprite.flip_h = true
+	elif onGround == true && facing > 0:
+		$AnimatedSprite.flip_h = false
 	
 	if onGround == true && velocity.x != 0:
-		$AnimatedSprite.play("IdlHorizontal")
+		$AnimatedSprite.play("MoveHorizontal")
 	else:
 		$AnimatedSprite.play("IdleHorizontal")
 	
